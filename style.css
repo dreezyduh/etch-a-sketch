@@ -1,0 +1,38 @@
+
+#container {
+    border: 5px dashed black;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: auto;
+    width: 960px;
+    height: 960px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+}
+
+#reset {
+    display: flex;
+    justify-content: center;
+}
+
+.gridItemHorizontal {
+    height: 40px;
+    flex-grow: 1;
+    
+
+}
+
+.gridItemColumn {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    flex-grow: 1;
+}
+
+.buttonContainer {
+    display: flex;
+}
