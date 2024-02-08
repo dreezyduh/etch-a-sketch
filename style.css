@@ -1,6 +1,5 @@
 
 #container {
-    border: 5px dashed black;
     display: flex;
     justify-content: center;
     box-sizing: border-box;

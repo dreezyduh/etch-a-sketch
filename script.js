@@ -2,12 +2,16 @@ const container = document.querySelector("#container");
 const header = document.querySelector("#header");
 const reset = document.querySelector("#reset")
 const resetButton = document.createElement("button");
-resetButton.textContent = "RESET GRID";
+resetButton.textContent = "START";
+resetButton.style.fontWeight = `bold`;
 reset.appendChild(resetButton);
 resetButton.addEventListener("click", drawGrid);
+resetButton.addEventListener("click", createColorButtons);
 
 function drawGrid() {
-    container.textContent = "";
+    container.style.border = `5px dashed black`;
+    container.textContent = ``;
+    resetButton.textContent = "RESET GRID";
     let number = prompt(`Insert a number \nmax is 100 \n( example : 100 = 100 rows and columns )`)
     if ((number > 0) && (number <= 100)) {
         for (j = 1; j <= number; j++) {
@@ -42,15 +46,18 @@ const buttonContainer = document.createElement("div")
 buttonContainer.setAttribute("class", "buttonContainer")
 header.appendChild(buttonContainer);
 
-let counter = 0;
-for (i = 0; i < buttonColors.length; i++) {
-    const i = document.createElement("button")
-    i.textContent = buttonColors[counter];
-    i.addEventListener("click", function () {
-        chosenColor = i.textContent;
-    })
-    counter += 1;
-    buttonContainer.appendChild(i);
+function createColorButtons() {
+    buttonContainer.textContent = ``;
+    let counter = 0;
+    for (i = 0; i < buttonColors.length; i++) {
+        const i = document.createElement("button")
+        i.textContent = buttonColors[counter];
+        i.addEventListener("click", function () {
+            chosenColor = i.textContent;
+        })
+        counter += 1;
+        buttonContainer.appendChild(i);
+    }
 }
 
 function random(number) {
